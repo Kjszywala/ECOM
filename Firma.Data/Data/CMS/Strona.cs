@@ -1,17 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ECOM.Intranet.Models.CMS
+namespace Firma.Data.Data.CMS
 {
-    public class Aktualnosc
+    // Tworzymy klase z ktorej bedzie automatycznie przez EF wygenerowana tabela.
+    public class Strona
     {
         [Key]// to co nizej jest kluczem podstawowym tabeli.
-        public int IdAktualnosci { get; set; }
+        public int IdStrony { get; set; }
 
         [Required(ErrorMessage = "Title is required")] // pole jest wymagane.
         [MaxLength(10, ErrorMessage = "Title can include maximum 10 characters.")] // maksymalna dlugosc.
-        [Display(Name = "Aktualnosci odnosnik Title")] // ta nazwe pola bedzie widzial uzytkownik.
+        [Display(Name = "WebLink Title")] // ta nazwe pola bedzie widzial uzytkownik.
         public string LinkTytul { get; set; }
 
         [Required(ErrorMessage = "Title is required")] // pole jest wymagane.

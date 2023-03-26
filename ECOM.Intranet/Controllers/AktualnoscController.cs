@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Firma.Data.Data;
+using Firma.Data.Data.CMS;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ECOM.Intranet.Data;
-using ECOM.Intranet.Models.CMS;
 
 namespace ECOM.Intranet.Controllers
 {
     public class AktualnoscController : Controller
     {
-        private readonly ECOMContext _context;
+        private readonly FirmaContext _context;
 
-        public AktualnoscController(ECOMContext context)
+        public AktualnoscController(FirmaContext context)
         {
             _context = context;
         }

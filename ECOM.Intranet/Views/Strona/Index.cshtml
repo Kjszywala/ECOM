@@ -1,13 +1,11 @@
-﻿@model IEnumerable<ECOM.Intranet.Models.CMS.Strona>
+﻿@model IEnumerable<Firma.Data.Data.CMS.Strona>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Strony";
 }
 
-<h1>Index</h1>
-
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Dodaj</a>
 </p>
 <table class="table">
     <thead>
@@ -43,9 +41,9 @@
                 @Html.DisplayFor(modelItem => item.Pozycja)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdStrony">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdStrony">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdStrony">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.IdStrony">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.IdStrony">Szczegoly</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdStrony">Usun</a>
             </td>
         </tr>
 }

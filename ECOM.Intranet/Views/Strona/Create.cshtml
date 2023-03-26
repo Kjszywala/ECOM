@@ -1,10 +1,7 @@
-﻿@model ECOM.Intranet.Models.CMS.Strona
-
+﻿@model Firma.Data.Data.CMS.Strona
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Dodaj Strone";
 }
-
-<h1>Create</h1>
 
 <h4>Strona</h4>
 <hr />
@@ -33,14 +30,14 @@
                 <span asp-validation-for="Pozycja" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Dodaj" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Powrot</a>
 </div>
 
 @section Scripts {

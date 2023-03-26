@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECOM.PortalWWW", "ECOM.PortalWWW\ECOM.PortalWWW.csproj", "{6EB4F829-A86C-4A2E-BBAB-B05AA84D7F56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECOM.PortalWWW", "ECOM.PortalWWW\ECOM.PortalWWW.csproj", "{6EB4F829-A86C-4A2E-BBAB-B05AA84D7F56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECOM.Intranet", "ECOM.Intranet\ECOM.Intranet.csproj", "{AEFB0A8E-A886-4AB6-B66F-102653DF09C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECOM.Intranet", "ECOM.Intranet\ECOM.Intranet.csproj", "{AEFB0A8E-A886-4AB6-B66F-102653DF09C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firma.Data", "Firma.Data\Firma.Data.csproj", "{97574281-E70F-4D4B-A60A-2AF35D02AD2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AEFB0A8E-A886-4AB6-B66F-102653DF09C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEFB0A8E-A886-4AB6-B66F-102653DF09C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEFB0A8E-A886-4AB6-B66F-102653DF09C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97574281-E70F-4D4B-A60A-2AF35D02AD2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97574281-E70F-4D4B-A60A-2AF35D02AD2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97574281-E70F-4D4B-A60A-2AF35D02AD2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97574281-E70F-4D4B-A60A-2AF35D02AD2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

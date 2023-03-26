@@ -1,0 +1,12 @@
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\bin\Debug\net6.0\Firma.Data.deps.json
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\bin\Debug\net6.0\Firma.Data.dll
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\bin\Debug\net6.0\Firma.Data.pdb
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\obj\Debug\net6.0\Firma.Data.csproj.AssemblyReference.cache
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\obj\Debug\net6.0\Firma.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\obj\Debug\net6.0\Firma.Data.AssemblyInfoInputs.cache
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\obj\Debug\net6.0\Firma.Data.AssemblyInfo.cs
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\obj\Debug\net6.0\Firma.Data.csproj.CoreCompileInputs.cache
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\obj\Debug\net6.0\Firma.Data.dll
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\obj\Debug\net6.0\refint\Firma.Data.dll
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\obj\Debug\net6.0\Firma.Data.pdb
+C:\Users\kamil\Desktop\ASPproject\PIAB\ECOM\Firma.Data\obj\Debug\net6.0\ref\Firma.Data.dll
