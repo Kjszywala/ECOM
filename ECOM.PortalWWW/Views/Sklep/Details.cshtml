@@ -3,20 +3,112 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_sklepLayout.cshtml";
 }
+<style>
+    .diver {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        width: 200px;
+    }
 
-<div>
-    Foto
-</div>
-<div>
-    @Model.Nazwa
-</div>
-<div>
-    @Model.Kod
-</div>
-<div>
-    @Model.Cena
-</div>
-<div>
-    @Model.Opis
-</div>
+        /* Ustawienie stylów dla pierwszego bloku div */
+        .diver div:first-of-type {
+            background-color: #45b6fe;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Ustawienie stylów dla pozostałych bloków div */
+        .diver div:not(:first-of-type) {
+            padding: 10px;
+        }
+
+        /* Ustawienie stylów dla drugiego bloku div */
+        .diver div:nth-of-type(2) {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Ustawienie stylów dla czwartego bloku div */
+        .diver div:nth-of-type(4) {
+            font-size: 18px;
+            color: #45b6fe;
+            font-weight: bold;
+        }
+
+        /* Ustawienie stylów dla piątego bloku div */
+        .diver div:last-of-type {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+</style>
+<center>
+    <div class="diver">
+        <div>
+            <img src="https://www.corsair.com/corsairmedia/sys_master/productcontent/CH-9300011-NA-M65_PRO_RGB_BLK_04.png" alt="mouse corsair" class="mouse" style="width:70px; height:100px;">
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <div>
+                        Nazwa
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Model.Nazwa
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        Kod
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Model.Kod
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        Cena
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Model.Cena.ToString("0.00") $
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        Opis
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Model.Opis
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div style="color:white;">
+            @Html.ActionLink("Cofnij", "Index", "Sklep", new { @class = "btn btn-info btn-icon", style = "color: white;" })
+        </div>
+    </div>
+    <br />
+    
+</center>
+<br />
 

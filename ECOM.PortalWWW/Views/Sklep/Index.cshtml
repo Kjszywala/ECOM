@@ -3,25 +3,68 @@
     ViewData["Title"] = "Sklep";
     Layout = "~/Views/Shared/_sklepLayout.cshtml";
 }
+@section head {
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <link href="~/css/home.css" type="text/css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="~/css/index.css" type="text/css" rel="stylesheet" />
+    <link href="~/css/layout.css" type="text/css" rel="stylesheet" />
+}
+<style>
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 400px;
+    }
+
+    .card-header h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .card btn{
+        background-color: #007bff;;
+    }
+</style>
+<script>
+    function performAction() {
+        var url = '@Url.Action("Details", "Sklep")';
+        window.location.href = url;
+    }
+</script>
 <div>
     <table>
-        <thead>
+        @*<thead>
             <tr>
                 <th>Foto</th>
                 <th>Nazwa</th>
                 <th>Cena</th>
             </tr>
-        </thead>
+        </thead>*@
         <tbody>
             @foreach(var item in Model)
             {
                 <tr>
-                    <td>@item.FotoUrl</td>
                     <td>
-                        @Html.ActionLink(item.Nazwa, "Details", "Sklep", new {id = item.IdTowaru}, null)
-                        @item.Nazwa
+                        <div class="card" style="width:200px;">
+                            <div class="card-header">
+                                <div>
+                                    @Html.ActionLink("Info", "Details", "Sklep", new{id = item.IdTowaru}, new { @class = "btn btn-info btn-icon" })
+                                </div>
+                            </div>
+                            <div class="card-body" style="margin-left:70px;">
+                                <img src="https://www.corsair.com/corsairmedia/sys_master/productcontent/CH-9300011-NA-M65_PRO_RGB_BLK_04.png" alt="mouse corsair" class="mouse" style="width:70px; height:100px;">
+                                
+                            </div>
+                            <h5>@item.Nazwa</h5>
+                            <h5 class="price">@item.Cena.ToString("0.00") £</h5>
+                        </div>
                     </td>
-                    <td>@item.Cena</td>
                 </tr>
             }
         </tbody>
