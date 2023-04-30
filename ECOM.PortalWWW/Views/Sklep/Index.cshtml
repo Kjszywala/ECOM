@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Firma.Data.Data.Sklep.Towar>
+@{
+    ViewData["Title"] = "Sklep";
+    Layout = "~/Views/Shared/_sklepLayout.cshtml";
+}
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Nazwa</th>
+                <th>Cena</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.FotoUrl</td>
+                    <td>
+                        @Html.ActionLink(item.Nazwa, "Details", "Sklep", new {id = item.IdTowaru}, null)
+                        @item.Nazwa
+                    </td>
+                    <td>@item.Cena</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
