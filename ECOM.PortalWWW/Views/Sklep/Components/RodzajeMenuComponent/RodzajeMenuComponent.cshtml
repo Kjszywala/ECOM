@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Firma.Data.Data.Sklep.Rodzaj>
+<div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+        <li>@Html.ActionLink("Strona Główna","Index","Home")</li>
+        @foreach (var item in Model)
+        {
+            <li>@Html.ActionLink(item.Nazwa,"Index","Sklep",new {id=item.IdRodzaju},null)</li>
+        }
+    </ul>
+
+    <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+    </ul>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+</div>
