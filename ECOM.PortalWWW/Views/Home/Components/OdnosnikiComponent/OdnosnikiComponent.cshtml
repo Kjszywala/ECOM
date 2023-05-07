@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.Strona>
+<div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+        @foreach (var item in Model)
+        {
+            <li>@Html.ActionLink(item.LinkTytul,"Index","Home",new {id=item.IdStrony},null)</li>
+        }
+        <li>@Html.ActionLink("Sklep Internetowy","Index","Sklep")</li>
+    </ul>
+
+    <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+    </ul>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+</div>
+<style>
+    .nav-wrapper {
+        background-color: #F8B195; /* default background color */
+animation: colorChange 5s infinite alternate; /* CSS animation */
+  height: 60px;
+  line-height: 60px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+@@keyframes colorChange {
+        0% {
+            background-color: #F8B195;
+        }
+
+        50% {
+            background-color: #7ED6DF;
+        }
+
+        100% {
+            background-color: #9B4DCA;
+        }
+}
+#logo-container {
+  font-size: 2rem;
+  padding-left: 20px;
+}
+
+ul.right {
+  margin-right: 20px;
+}
+
+ul.right li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+ul.right li:last-child {
+  margin-right: 0;
+}
+
+#nav-mobile {
+  display: none;
+}
+
+.sidenav-trigger i {
+  line-height: 60px;
+}
+
+@@media only screen and (max-width: 992px) {
+  #logo-container {
+    padding-left: 0;
+  }
+
+  ul.right {
+    display: none;
+  }
+
+  #nav-mobile {
+    display: block;
+  }
+}
+
+</style>
