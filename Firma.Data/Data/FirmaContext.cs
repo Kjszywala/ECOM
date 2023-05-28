@@ -16,5 +16,6 @@ namespace Firma.Data.Data
         public DbSet<Aktualnosc> Aktualnosc { get; set; }
         public DbSet<Rodzaj> Rodzaj { get; set; }
         public DbSet<Towar> Towar { get; set; }
+        public DbSet<ElementKoszyka> ElementKoszyka { get; set; }
     }
 }

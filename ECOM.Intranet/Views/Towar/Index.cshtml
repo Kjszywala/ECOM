@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Firma.Data.Data.Sklep.Towar>
+@{
+    ViewData["Title"] = "Towar";
+}
+<div>
+    <a asp-action="Create" asp-controller="Towar">Dodaj</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.Kod)
+            </th>
+             <th>
+                Nazwa
+            </th>
+             <th>
+                @Html.DisplayNameFor(model=>model.Cena)
+            </th>
+             <th>
+                Categoria
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model=>item.Kod)
+                </td>
+                 <td>
+                    @Html.DisplayFor(model=>item.Nazwa)
+                </td>
+                 <td>
+                    @Html.DisplayFor(model=>item.Cena)
+                </td>
+                 <td>
+                    @Html.DisplayFor(model=>item.Rodzaj.Nazwa)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Firma.Data.Data.CMS
 {
 
-    public class Aktualnosc
+    public class Aktualnosc : TEntity
     {
         [Key]// to co nizej jest kluczem podstawowym tabeli.
         public int IdAktualnosci { get; set; }

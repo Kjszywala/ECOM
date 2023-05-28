@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Firma.Data.Data.Sklep
 {
-    public class Rodzaj
+    public class Rodzaj :TEntity
     {
         [Key]
         public int IdRodzaju { get; set; }

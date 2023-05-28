@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Firma.Data.Data.Sklep
 {
-    public class Towar
+    public class Towar : TEntity
     {
         [Key]
         public int IdTowaru { get; set; }
@@ -25,7 +25,7 @@ namespace Firma.Data.Data.Sklep
         public string Opis { get; set; }
 
         //to jest realizacja klucza obcego.
-
+        [Display(Name = "Rodzaj Towaru")]
         public int RodzajId { get; set; }
 
         public Rodzaj Rodzaj { get; set; }

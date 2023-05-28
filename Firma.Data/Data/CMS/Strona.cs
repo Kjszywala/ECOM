@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Firma.Data.Data.CMS
 {
     // Tworzymy klase z ktorej bedzie automatycznie przez EF wygenerowana tabela.
-    public class Strona
+    public class Strona :TEntity
     {
         [Key]// to co nizej jest kluczem podstawowym tabeli.
         public int IdStrony { get; set; }
