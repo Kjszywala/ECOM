@@ -2,23 +2,26 @@
 using Firma.Data.Data;
 using Firma.Data.Data.CMS;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECOM.Intranet.Controllers
 {
-    public class StronaController : Controller
+    public class StronaController : BaseController<Strona>
     {
-        private readonly FirmaContext _context;
-
         public StronaController(FirmaContext context)
+            :base(context)
         {
-            _context = context;
         }
 
-        // GET: Strona
-        public async Task<IActionResult> Index()
+        public override async Task<List<Strona>> GetEntityList()
         {
-              return View(await _context.Strona.ToListAsync());
+            return await _context.Strona.ToListAsync();
+        }
+
+        public override async Task SetSelectList()
+        {
+            ViewBag.Strona = new SelectList(await _context.Strona.ToListAsync(), "IdStrony", "Tytul");
         }
 
         // GET: Strona/Details/5
@@ -39,28 +42,6 @@ namespace ECOM.Intranet.Controllers
             return View(strona);
         }
 
-        // GET: Strona/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Strona/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdStrony,LinkTytul,Tytul,Tresc,Pozycja")] Strona strona)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(strona);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(strona);
-        }
-
         // GET: Strona/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -70,6 +51,7 @@ namespace ECOM.Intranet.Controllers
             }
 
             var strona = await _context.Strona.FindAsync(id);
+
             if (strona == null)
             {
                 return NotFound();
@@ -153,5 +135,6 @@ namespace ECOM.Intranet.Controllers
         {
           return _context.Strona.Any(e => e.IdStrony == id);
         }
+
     }
 }

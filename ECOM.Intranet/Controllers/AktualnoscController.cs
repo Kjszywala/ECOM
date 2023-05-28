@@ -1,23 +1,26 @@
 ﻿using Firma.Data.Data;
 using Firma.Data.Data.CMS;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECOM.Intranet.Controllers
 {
-    public class AktualnoscController : Controller
+    public class AktualnoscController : BaseController<Aktualnosc>
     {
-        private readonly FirmaContext _context;
-
         public AktualnoscController(FirmaContext context)
+            :base(context)
         {
-            _context = context;
         }
 
-        // GET: Aktualnosc
-        public async Task<IActionResult> Index()
+        public override async Task<List<Aktualnosc>> GetEntityList()
         {
-              return View(await _context.Aktualnosc.ToListAsync());
+            return await _context.Aktualnosc.ToListAsync();
+        }
+
+        public override async Task SetSelectList()
+        {
+            ViewBag.Aktualnosc = new SelectList(await _context.Aktualnosc.ToListAsync(), "IdAktualnosci", "Tytul");
         }
 
         // GET: Aktualnosc/Details/5
@@ -35,28 +38,6 @@ namespace ECOM.Intranet.Controllers
                 return NotFound();
             }
 
-            return View(aktualnosc);
-        }
-
-        // GET: Aktualnosc/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Aktualnosc/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdAktualnosci,LinkTytul,Tytul,Tresc,Pozycja")] Aktualnosc aktualnosc)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(aktualnosc);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
             return View(aktualnosc);
         }
 
@@ -152,5 +133,6 @@ namespace ECOM.Intranet.Controllers
         {
           return _context.Aktualnosc.Any(e => e.IdAktualnosci == id);
         }
+
     }
 }
