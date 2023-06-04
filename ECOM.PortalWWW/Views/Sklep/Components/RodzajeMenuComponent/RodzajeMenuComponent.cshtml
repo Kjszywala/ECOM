@@ -6,6 +6,7 @@
         @foreach (var item in Model)
         {
             <li>@Html.ActionLink(item.Nazwa,"Index","Sklep",new {id=item.IdRodzaju},null)</li>
+            <li>@Html.ActionLink("Koszyk", "Index", "Koszyk")</li>
         }
     </ul>
 

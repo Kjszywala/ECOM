@@ -1,0 +1,36 @@
+﻿@model ECOM.PortalWWW.Models.Sklep.DaneDoKoszyka
+
+@{
+    ViewData["Title"] = "Koszyk";
+    Layout = "~/Views/Shared/_KoszykLayout.cshtml";
+}
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nazwa Towaru</th>
+                <th>Cena</th>
+                <th>Ilosc</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ElementyKoszyka)
+            {
+                <tr>
+                    <td>
+                        @item.Towar.Nazwa
+                    </td>
+                    <td>
+                        @item.Towar.Cena
+                    </td>
+                    <td>
+                        @item.Ilosc
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        Wartosc koszyka: @Model.Razem $
+    </div>
+</div>

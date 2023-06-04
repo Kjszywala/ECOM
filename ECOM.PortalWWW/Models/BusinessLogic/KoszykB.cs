@@ -1,5 +1,6 @@
 ﻿using Firma.Data.Data;
 using Firma.Data.Data.Sklep;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECOM.PortalWWW.Models.BusinessLogic
 {
@@ -47,12 +48,45 @@ namespace ECOM.PortalWWW.Models.BusinessLogic
             if(elementKoszyka == null)
             {
                 //jezeli brak tego towaru w koszyku 
+                //_context.ElementKoszyka.Add(elementKoszyka);
+                elementKoszyka = new ElementKoszyka()
+                {
+                    IdSesjiKoszyka = this.IdSesjiKoszyka,
+                    DataUtworzenia = DateTime.Now,
+                    IdTowaru = towar.IdTowaru,
+                    Towar = _context.Towar.Find(towar.IdTowaru),
+                    Ilosc = 1,
+                };
+                // Dodajemy element koszyka do bazy danych.
                 _context.ElementKoszyka.Add(elementKoszyka);
             }
             else
             {
                 //jezeli jest w koszyku.
+                elementKoszyka.Ilosc++;
             }
+            _context.SaveChanges();
         }
+        // funkcja pobiera wszystkie elementy koszyka danej przegladarki.
+        public async Task<List<ElementKoszyka>> GetElementyKoszyka()
+        {
+            return await _context.ElementKoszyka
+                .Where(item=>item.IdSesjiKoszyka == this.IdSesjiKoszyka)
+                .Include(e=>e.Towar)
+                .ToListAsync();
+        }
+
+        public async Task<decimal> GetWartoscKoszyka()
+        {
+            var list = GetElementyKoszyka().Result;
+            var items =
+            (
+                from element in _context.ElementKoszyka
+                where element.IdSesjiKoszyka == this.IdSesjiKoszyka
+                select (decimal?)element.Ilosc * element.Towar.Cena
+            );
+            return await items.SumAsync() ?? 0;
+        }
+
     }
 }

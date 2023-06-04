@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Starter Template - Materialize</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/lib/materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/lib/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <ul class="right hide-on-med-and-down">
+            <li>
+                <a asp-action="Index" asp-controller="Sklep">Sklep</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+
+    <footer class="page-footer orange">
+
+        <div class="footer-copyright">
+            <div class="container">
+                Made by KJS<a class="orange-text text-lighten-3" href="http://materializecss.com"></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../bin/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+</body>
+</html>
+

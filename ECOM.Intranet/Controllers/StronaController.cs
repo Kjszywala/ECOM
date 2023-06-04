@@ -21,7 +21,7 @@ namespace ECOM.Intranet.Controllers
 
         public override async Task SetSelectList()
         {
-            ViewBag.Strona = new SelectList(await _context.Strona.ToListAsync(), "IdStrony", "Tytul");
+            ViewBag.Strona = new SelectList(await _context.Strona.ToListAsync(), "Tytul", "Tytul");
         }
 
         // GET: Strona/Details/5
